@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Login and Registration</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+    
+    <div class="login">
+        <h1>Login</h1>
+        <form method="post" action="/api/User/login" >
+            <label>Email</label>
+            <input type="email" name="Email" placeholder="Enter your email" required>
+            <% if(messages.Error){ %>
+                <div class="message">
+                    <small><i class=" icon fa-solid fa-circle-exclamation"></i><%=messages.Error%></small>
+            </div>
+            <% } %>
+
+            <label>Password</label>
+            <input type="password" name="Password"placeholder="Password" required>
+            <% if(messages.error){ %>
+                 <div class="message">
+                    <small><i class=" icon fa-solid fa-circle-exclamation"></i><%=messages.error%></small>
+            </div>
+            <% } %>
+
+            <input type="Submit" name="" value="Login">
+
+        </form>
+        <p>Not have an account? <a href="/api/User/signup">SignUp here</a></p>
+</body>
+</html>
